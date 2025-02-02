@@ -1,0 +1,48 @@
+#:import arabic_reshaper arabic_reshaper
+#:import MDTextFieldPersian style.persian.MDTextFieldPersian
+#:import get_display bidi.algorithm.get_display
+
+<Name>:
+    md_bg_color: app.theme_cls.backgroundColor
+    name: 'Name'
+    username: name
+    MDBoxLayout:
+        orientation: 'vertical'
+        
+        FitImage:
+            source: 'style/image/BtsBg.jpeg'
+    FitImage:
+        source: 'style/image/logo.png'
+        size_hint: '.6','.45'
+        pos_hint: {'center_x': .5, 'center_y': .93}
+            
+    MDCard:
+        size_hint: (.9,.3)
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: 20,20
+            Label:
+                font_name: 'style/iransans.ttf'
+                text: get_display(arabic_reshaper.reshape('اسم شما:\n'))
+                halign: 'center'
+            MDTextFieldPersian:
+                font_name: 'style/iransans.ttf'
+                id: name
+                theme_text_color: 'Custom'
+                text_color_focus: 'black'
+                MDTextFieldHintText:
+                    text: "Name"
+            MDButton:
+                id: button_next
+                halign: 'center'
+                pos_hint: {'center_x': .5, 'center_y': .1}
+                on_press: 
+                    root.user_chak()
+                    
+                MDButtonText:
+                    text: get_display(arabic_reshaper.reshape('ثبت'))
+                    
+                    
+                    
+                

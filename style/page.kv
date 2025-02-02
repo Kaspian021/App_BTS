@@ -1,0 +1,61 @@
+#:import arabic_reshaper arabic_reshaper
+#:import MDTextFieldPersian style.persian.MDTextFieldPersian
+#:import get_display bidi.algorithm.get_display
+
+
+<Page>:
+	hero_to: hero_to
+    name: "Page"
+	
+	FitImage:
+        id: image_menu
+        source: 'style/image/dark_menu.png'
+	
+	MDBoxLayout:
+        
+        padding: 40,50
+        
+        MDCard:
+            halign: 'center'
+            
+            ScrollView:
+                pos_hint: {'center_x':.5,'center_y':.1}
+                MDGridLayout:
+                    cols: 1
+                    
+                    spacing: "10sp"
+                    padding: "20sp"
+                    adaptive_height: True
+                    
+                    
+                        
+                    MDLabel:
+                            
+                        text: get_display(arabic_reshaper.reshape("آیدی اینستا"))
+                        halign: 'center'
+				
+
+
+    
+    MDFloatLayout:
+		pos_hint: {'center_y': .5}
+            
+            
+        spacing: "40sp"
+        padding: "20sp"
+        
+			
+
+		MDHeroTo:
+			id: hero_to
+			radius: dp(24)
+			size_hint: 1, None
+			height: "220sp"
+			pos_hint: {"top": 1}
+	
+		
+		MDIconButton:
+			pos_hint:{"top": 1}
+			icon: 'arrow-left'
+			on_release: 
+                root.manager.current = "Menu"
