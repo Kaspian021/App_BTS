@@ -1,6 +1,36 @@
 <Programmer>:
 	name: 'pro'
-	
-	
-	MDBoxLayout:
-		
+	md_bg_color: rgba(0,0,0,255)
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding:0,0
+      
+        FitImage:
+            source: 'style/image/BtsBg.jpeg'
+    
+    FitImage:
+        source: 'style/image/logo.png'
+        size_hint: '.6sp','.45sp'
+        pos_hint: {'center_x': .5 , 'center_y': .93}
+    
+    MDCard:
+        
+        pos_hint: {'center_x': .5, 'center_y': .55}
+        size_hint: (.7,.65)
+        style: 'elevated'
+        MDLabel:
+            text_color: rgba(70,0,150,200)
+            font_name: 'style/iransans.ttf'
+            text: get_display(arabic_reshaper.reshape('BTS THE BEST \n This programme is for all Iranian and international Army. In this programme, we will put the best and latest songs of BTS from the point of view of all the Army in the world and share their news of the day, and it is possible for you to comment on it.'))
+            halign: 'center'
+			
+    MDButton:
+        on_release: 
+			app.root.current= 'Menu'
+			app.root.transition.direction= "left"
+        
+        halign: 'center'
+        pos_hint: {"center_x": .9, 'center_y': .96}
+        MDButtonText:
+            text: 'Start'

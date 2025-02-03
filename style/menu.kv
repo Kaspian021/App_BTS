@@ -81,7 +81,9 @@
             MDTopAppBarLeadingButtonContainer:
                 MDActionTopAppBarButton:
                     icon: 'menu'
-                    on_press: root.current= 'pro'
+                    on_press: 
+                        root.on_menu()
+                        app.root.transition.direction='right'
             
             MDTopAppBarTitle:
                 text: 'BTS The Best'
