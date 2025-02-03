@@ -105,9 +105,14 @@ class Menu(MDScreen):
             self.ids.box.add_widget(hero)
 
 
+    def on_menu(self):
+        app= MDApp.get_running_app()
+        screen_menu= app.screen_manager
+        screen_menu.current= 'Pro'
 
 
-
+class Programmer(MDScreen):
+    pass
 
 
 

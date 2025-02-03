@@ -8,7 +8,7 @@ from kivy.uix.screenmanager import ScreenManager
 from kivymd.uix.screenmanager import MDScreenManager
 from module.app_about import About
 from module.name import Name
-from module.Menu import Menu
+from module.Menu import Menu,Programmer
 from module.Page import Page
 
 Window.size= [310,580]
@@ -38,16 +38,19 @@ class BTS(MDApp):
         Builder.load_file('style/name.kv')
         Builder.load_file('style/menu.kv')
         Builder.load_file('style/page.kv')
+        Builder.load_file('style/programmer.kv')
 
         self.screen_manager = MDScreenManager()  # تعریف به عنوان متغیر کلاس
         if not os.path.exists("Users.txt"):
             self.screen_manager.add_widget(About(name='About'))
             self.screen_manager.add_widget(Name(name='Name'))
             self.screen_manager.add_widget(Menu(name='Menu'))
+            self.screen_manager.add_widget(Programmer(name='Pro'))
             self.screen_manager.add_widget(Page(name='Page'))
         else:
             self.screen_manager.add_widget(Menu(name='Menu'))
             self.screen_manager.add_widget(Page(name='Page'))
+            self.screen_manager.add_widget(Programmer(name='Pro'))
         return self.screen_manager
 
 
