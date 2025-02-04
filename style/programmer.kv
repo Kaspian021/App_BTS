@@ -1,6 +1,6 @@
 <Programmer>:
 	name: 'pro'
-	msg: about_text
+	
 	md_bg_color: rgba(0,0,0,255)
     
     MDBoxLayout:
@@ -16,28 +16,18 @@
         pos_hint: {'center_x': .5 , 'center_y': .93}
     
     MDCard:
+        id: Card
         pos_hint: {'center_x': .5, 'center_y': .55}
-        size_hint: (.7, .65)
+        size_hint: (.75, .6)
         style: 'elevated'
-        padding: "16dp"
         
-        MDBoxLayout:
+        
+        
             
-            orientation: 'vertical'
-            adaptive_height: True
-            
-            MDLabel:
-                id: about_text
-                text_color: rgba(70,0,150,200)
-                text: 
-                halign: 'center'
-                valign: 'middle'
-                size_hint_y: None
-                height: self.texture_size[1]
-                padding: "8dp", "8dp"
-                text_size: self.width, None
-                allow_selection: True
-                allow_copy: True
+        FitImage:
+            source: 'style/image/textfield.png'
+            size_hint: 1,1
+            radius: ('17sp')
 			
     MDIconButton:
         icon: 'arrow-right-bold-circle-outline'
