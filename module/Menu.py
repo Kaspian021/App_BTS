@@ -124,21 +124,7 @@ class Menu(MDScreen):
 
 
 class Programmer(MDScreen):
-    def __init__(self,**kwargs):
-        super().__init__(**kwargs)
-        msg= StringProperty()
-
-
-
-        text_fix =((
-        'دورد این برنامه برای ارتش زیبا و بزرگ آرمی ها توسعه یافته است '+'\n'
-        'نام سازنده:علی کاسپین '+'\n'
-        'تمامی امتیازات این برنامه متعلق به گروه (ویزارد)است'+'\n'
-
-        ))
-
-        print(text_fix)
-        self.msg.text= get_display(arabic_reshaper.reshape(text_fix))
+    
 
 
     def on_leave(self):
