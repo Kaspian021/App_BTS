@@ -1,9 +1,13 @@
-
+import arabic_reshaper
+from bidi import get_display
 from kivy.properties import StringProperty, ObjectProperty
 from kivy.animation import Animation
 from kivy.clock import Clock
 from kivymd.app import MDApp
+from kivymd.uix.card import MDCard
 from kivymd.uix.fitimage import FitImage
+from kivymd.uix.navigationdrawer import MDNavigationDrawerItem, MDNavigationDrawerItemLeadingIcon, \
+    MDNavigationDrawerItemText
 from kivymd.uix.screen import MDScreenManager, MDScreen
 from kivymd.uix.hero import MDHeroFrom
 from kivy.metrics import dp
@@ -70,7 +74,7 @@ class Menu(MDScreen):
 
 
         self.theme_cls.primary_palette = (
-            "Black" if self.theme_cls.primary_palette == "Red" else "Red"
+            "Black" if self.theme_cls.primary_palette == "Purple" else "Purple"
 
         )
         self.theme_cls.theme_style = (
@@ -104,15 +108,44 @@ class Menu(MDScreen):
             hero= HeroItem(text=f'Item{x}',manager=self,tag=f'{x}',source=f'{image}')
             self.ids.box.add_widget(hero)
 
+    def move_about_programmer(self):
+        if self.parent:
 
-    def on_menu(self):
-        app= MDApp.get_running_app()
-        screen_menu= app.screen_manager
-        screen_menu.current= 'Pro'
+            self.parent.current_heroes = ["about_hero"]
+
+
+            pro_screen = self.parent.get_screen('Pro')
+            if hasattr(pro_screen.ids, 'hero_to'):
+                pro_screen.ids.hero_to.tag = "about_hero"
+
+
+            self.parent.current = 'Pro'
+
 
 
 class Programmer(MDScreen):
-    pass
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs)
+        msg= StringProperty()
+
+
+
+        text_fix =((
+        'دورد این برنامه برای ارتش زیبا و بزرگ آرمی ها توسعه یافته است '+'\n'
+        'نام سازنده:علی کاسپین '+'\n'
+        'تمامی امتیازات این برنامه متعلق به گروه (ویزارد)است'+'\n'
+
+        ))
+
+        print(text_fix)
+        self.msg.text= get_display(arabic_reshaper.reshape(text_fix))
+
+
+    def on_leave(self):
+
+        if self.parent:
+            self.parent.current_heroes = []
+
 
 
 
