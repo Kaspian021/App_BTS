@@ -1,5 +1,6 @@
 <Programmer>:
 	name: 'pro'
+	msg: about_text
 	md_bg_color: rgba(0,0,0,255)
     
     MDBoxLayout:
@@ -15,22 +16,36 @@
         pos_hint: {'center_x': .5 , 'center_y': .93}
     
     MDCard:
-        
         pos_hint: {'center_x': .5, 'center_y': .55}
-        size_hint: (.7,.65)
+        size_hint: (.7, .65)
         style: 'elevated'
-        MDLabel:
-            text_color: rgba(70,0,150,200)
-            font_name: 'style/iransans.ttf'
-            text: get_display(arabic_reshaper.reshape('BTS THE BEST \n This programme is for all Iranian and international Army. In this programme, we will put the best and latest songs of BTS from the point of view of all the Army in the world and share their news of the day, and it is possible for you to comment on it.'))
-            halign: 'center'
+        padding: "16dp"
+        
+        MDBoxLayout:
+            
+            orientation: 'vertical'
+            adaptive_height: True
+            
+            MDLabel:
+                id: about_text
+                text_color: rgba(70,0,150,200)
+                text: 
+                halign: 'center'
+                valign: 'middle'
+                size_hint_y: None
+                height: self.texture_size[1]
+                padding: "8dp", "8dp"
+                text_size: self.width, None
+                allow_selection: True
+                allow_copy: True
 			
-    MDButton:
+    MDIconButton:
+        icon: 'arrow-right-bold-circle-outline'
+        theme_icon_color: "Custom"
+        icon_color: 'black'
+        style: 'tonal'
+        pos_hint: {"center_x": .9, 'center_y': .96}
         on_release: 
 			app.root.current= 'Menu'
 			app.root.transition.direction= "left"
         
-        halign: 'center'
-        pos_hint: {"center_x": .9, 'center_y': .96}
-        MDButtonText:
-            text: 'Start'

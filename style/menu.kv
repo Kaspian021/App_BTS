@@ -80,10 +80,11 @@
             pos_hint: {'center_x':.5,'center_y': .97}
             MDTopAppBarLeadingButtonContainer:
                 MDActionTopAppBarButton:
-                    icon: 'menu'
+                    icon: 'account-group'
                     on_press: 
-                        root.on_menu()
-                        app.root.transition.direction='right'
+                        root.move_about_programmer()
+                        app.root.transition.direction= "right"
+                        
             
             MDTopAppBarTitle:
                 text: 'BTS The Best'
@@ -94,15 +95,15 @@
                 role: 'medium'
                 
                 
-            MDTopAppBarTrailingButtonContainer:
-                MDButton:
+        MDButton:
                 
-                    pos_hint: {'center_x':1,'center_y':.1}
-                    on_release: root.change_color()
-                    MDButtonText:
-                        text: '{}'.format(app.theme_cls.theme_style)
-                        font_style: 'Label'
-                        role: 'medium'
+            pos_hint: {'center_x':.85,'center_y':.92}
+            on_release: root.change_color()
+            MDButtonText:
+                text: '{}'.format(app.theme_cls.theme_style)
+                font_style: 'Label'
+                role: 'medium'
+                
             
     
             
