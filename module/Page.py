@@ -10,6 +10,32 @@ from kivymd.uix.screen import MDScreen
 
 class Page(MDScreen):
 
+    def load_page(self,tag):
+
+        if tag== 'Kim namjoon':
+            self.ids.custom.source = 'style/image/text1.png'
+        elif tag == 'Kim seokjin':
+            self.ids.custom.source= 'style/image/text2.png'
+        elif tag == 'Min yoogi':
+            self.ids.custom.source= 'style/image/text3.png'
+
+        elif tag == 'Jung hoseok':
+            self.ids.custom.source= 'style/image/text4.png'
+        elif tag == 'Park jimin':
+            self.ids.custom.source= 'style/image/text5.png'
+        elif tag == 'Kim taehyung':
+            self.ids.custom.source= 'style/image/text6.png'
+        elif tag == 'Jeon jungkook':
+            self.ids.custom.source= 'style/image/text7.png'
+
+
+
+
+
+
+
+
+
 
     def on_pre_enter(self):
 

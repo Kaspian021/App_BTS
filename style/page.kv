@@ -13,26 +13,34 @@
 	
 	MDBoxLayout:
         
-        padding: 40,50
+        padding: 30,50
         
-        MDCard:
-            halign: 'center'
+        
             
-            ScrollView:
-                pos_hint: {'center_x':.5,'center_y':.1}
-                MDGridLayout:
-                    cols: 1
+        ScrollView:
+            pos_hint: {'center_x':.5,'center_y':.1}
+            
+            MDFloatLayout:
+                pos_hint: {'center_x': .5, 'center_y': .1}
+                
+                adaptive_height: True
+                
                     
-                    spacing: "10sp"
-                    padding: "20sp"
-                    adaptive_height: True
                     
+                
+        
                     
                         
-                    MDLabel:
-                            
-                        text: get_display(arabic_reshaper.reshape("آیدی اینستا"))
-                        halign: 'center'
+                FitImage:
+                    pos_hint: {'center_x': .5, 'center_y': .01}
+                    id: custom
+                    source: ''
+                    size_hint: 1,5.5
+                    radius: ('17sp')
+                
+                
+                    
+                    
 				
 
 
