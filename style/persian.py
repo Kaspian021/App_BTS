@@ -12,7 +12,7 @@ from kivy.properties import ObjectProperty, NumericProperty, StringProperty
 
 
 class MDTextFieldPersian(MDTextField):
-    max_chars = NumericProperty(20)  # maximum character allowed
+    max_chars = NumericProperty(15)  # maximum character allowed
     str = StringProperty()
 
     def __init__(self, **kwargs):
