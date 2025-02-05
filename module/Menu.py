@@ -56,6 +56,7 @@ class HeroItem(MDHeroFrom):
             page_screen = screen_manager.get_screen('Page')
             if hasattr(page_screen.ids, 'hero_to'):
                 page_screen.ids.hero_to.tag = self.tag
+            page_screen.load_page(self.tag)
             screen_manager.current = "Page"
 
         Clock.schedule_once(switch_screen, .2)
