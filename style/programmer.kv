@@ -12,7 +12,7 @@
     
     FitImage:
         source: 'style/image/logo.png'
-        size_hint: '.6sp','.45sp'
+        size_hint: '.4sp','.35sp'
         pos_hint: {'center_x': .5 , 'center_y': .93}
     
     MDCard:
@@ -28,6 +28,40 @@
             source: 'style/image/textfield.png'
             size_hint: 1,1
             radius: ('17sp')
+        
+    MDFloatLayout:
+        size_hint: .45,.45
+        pos_hint: {'center_x': .5, 'center_y': .4}
+        
+        
+        IconImage:
+            id: instagram
+            source: 'style/image/instagram-icon.png'
+            pos_hint: {'center_x': .1, 'center_y': .3}
+            size_hint: .3,.15
+            radius: ('0sp')
+            on_release:
+                root.link_ins()
+            
+        IconImage:
+            id: telegram
+            source: 'style/image/telegram-logo.png'
+            pos_hint: {'center_x': .5, 'center_y': .3}
+            size_hint: .3,.15
+            radius: ('0sp')
+            on_release:
+                root.link_tel()
+            
+            
+            
+        IconImage:
+            id: youtube
+            source: 'style/image/youtube-logo.png'
+            pos_hint: {'center_x': .9, 'center_y': .3}
+            size_hint: .3,.15
+			radius: ('0sp')
+			on_release:
+                root.link_you()
 			
     MDIconButton:
         icon: 'arrow-right-bold-circle-outline'

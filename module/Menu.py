@@ -1,16 +1,23 @@
-import arabic_reshaper
-from bidi import get_display
+import webbrowser
+
+from arabic_reshaper import arabic_reshaper
+from bidi.algorithm import get_display
 from kivy.properties import StringProperty, ObjectProperty
 from kivy.animation import Animation
 from kivy.clock import Clock
+from kivy.uix.label import Label
 from kivymd.app import MDApp
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.button import MDIconButton
 from kivymd.uix.card import MDCard
 from kivymd.uix.fitimage import FitImage
-from kivymd.uix.navigationdrawer import MDNavigationDrawerItem, MDNavigationDrawerItemLeadingIcon, \
-    MDNavigationDrawerItemText
+from kivymd.uix.floatlayout import MDFloatLayout
+from kivymd.uix.gridlayout import MDGridLayout
+from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import MDScreenManager, MDScreen
 from kivymd.uix.hero import MDHeroFrom
 from kivy.metrics import dp
+
 
 
 
@@ -57,18 +64,22 @@ class HeroItem(MDHeroFrom):
             if hasattr(page_screen.ids, 'hero_to'):
                 page_screen.ids.hero_to.tag = self.tag
             page_screen.load_page(self.tag)
+            page_screen.on_enter(self.tag)
             screen_manager.current = "Page"
 
         Clock.schedule_once(switch_screen, .2)
 
 
-
+class IconImage(FitImage,MDIconButton):
+    pass
 
 
 
 class Menu(MDScreen):
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
+        self.layout_one = None
+        self.layout = None
 
     def change_color(self):
 
@@ -103,11 +114,48 @@ class Menu(MDScreen):
             'style/image/Jeon jungkook.jpg'
 
         ]
+        text_label= Label(text=get_display(arabic_reshaper.reshape('برای اخبار جدید(BTS)به پیج ما بپیوندید'))
+                          ,pos_hint={'center_x':.5,'center_y':.9}
+                          ,font_size= 12,
+                          )
+        icon_tel = MDIconButton(id='tel',
+                                icon='youtube',
+                                pos_hint={'center_x': .6, 'center_y': .1},
+                                on_release=lambda x:self.link_icon('tel'),
+                                )
+        icon_ins= MDIconButton(id='ins',
+                               icon='instagram',
+                               pos_hint={'center_x':.4,'center_y':.1},
+                               on_release= lambda x:self.link_icon('ins'),
+                               )
+        self.layout_one = MDGridLayout(pos_hint={'center_x': .5, 'center_y': .1},
+                                   cols=2,
+                                   size_hint=(1, .1),
+
+                                   )
+        self.layout= MDGridLayout(pos_hint={'center_x': .5, 'center_y': .1},
+                                 cols=2,
+                                 size_hint=(1,.1),
+
+                                 )
         for x,image in zip(name,List_image ):
 
 
             hero= HeroItem(text=f'Item{x}',manager=self,tag=f'{x}',source=f'{image}')
             self.ids.box.add_widget(hero)
+
+        self.layout_one.add_widget(text_label)
+        
+        self.layout.add_widget(icon_tel)
+        self.layout.add_widget(icon_ins)
+        self.ids.box.add_widget(self.layout_one)
+        self.ids.box.add_widget(self.layout)
+
+    def link_icon(self,icon):
+        if icon == 'ins':
+            webbrowser.open('https://www.youtube.com/@MR_Wizard_Grop')
+        elif icon == 'tel':
+            webbrowser.open('https://t.me/bts_best_grop')
 
     def move_about_programmer(self):
         if self.parent:
@@ -125,14 +173,20 @@ class Menu(MDScreen):
 
 
 class Programmer(MDScreen):
-    
+    def link_ins(self):
+        pass
+    def link_tel(self):
+        webbrowser.open('https://t.me/bts_best_grop')
+
+    def link_you(self):
+        webbrowser.open('https://www.youtube.com/@MR_Wizard_Grop')
+
 
 
     def on_leave(self):
 
         if self.parent:
             self.parent.current_heroes = []
-
 
 
 

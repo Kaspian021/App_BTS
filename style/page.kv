@@ -3,6 +3,13 @@
 #:import get_display bidi.algorithm.get_display
 
 
+
+<CustomListMDSilver>
+    MDListItemLeadingAvatar:
+        id: image_music
+        source: 'style/image/logo.png'
+    
+
 <Page>:
 	hero_to: hero_to
     name: "Page"
@@ -13,11 +20,12 @@
 	
 	MDBoxLayout:
         
-        padding: 30,50
+        padding: 30,0
         
         
             
         ScrollView:
+            
             pos_hint: {'center_x':.5,'center_y':.1}
             
             MDFloatLayout:
@@ -37,8 +45,13 @@
                     source: ''
                     size_hint: 1,5.5
                     radius: ('17sp')
+            
+            
+            
                 
-                
+                MDSliverAppbarContent:
+                    id: contect
+                    
                     
                     
 				

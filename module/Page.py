@@ -2,9 +2,12 @@ import arabic_reshaper
 from bidi import get_display
 from kivy.properties import ObjectProperty
 from kivymd.app import MDApp
+from kivymd.uix.list import MDListItem
 from kivymd.uix.screen import MDScreen
 
 
+class CustomListMDSilver(MDListItem):
+    pass
 
 
 
@@ -12,8 +15,10 @@ class Page(MDScreen):
 
     def load_page(self,tag):
 
+
         if tag== 'Kim namjoon':
             self.ids.custom.source = 'style/image/text1.png'
+
         elif tag == 'Kim seokjin':
             self.ids.custom.source= 'style/image/text2.png'
         elif tag == 'Min yoogi':
