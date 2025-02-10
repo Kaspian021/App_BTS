@@ -2,14 +2,39 @@
 #:import MDTextFieldPersian style.persian.MDTextFieldPersian
 #:import get_display bidi.algorithm.get_display
 
-
+    
 
 <CustomListMDSilver>
     MDListItemLeadingAvatar:
         id: image_music
         source: 'style/image/logo.png'
     
-
+<FixStyleScroll>
+    adaptive_height: True
+    
+    cols: 1
+    MDCard:
+        id: Card
+        pos_hint: {'center_x': .5, 'center_y': 2.1}
+        size_hint: (.75, 5)
+        style: 'elevated'
+        
+        
+        FitImage:
+            size_hint: (.1,1.1)
+            source: ''
+            id: custom
+            radius: '30dp'
+            
+        
+    MDBoxLayout:
+        
+        pos_hint: {'center_x': .5, 'center_y': .1}
+        id: style
+        
+    
+    
+        
 <Page>:
 	hero_to: hero_to
     name: "Page"
@@ -18,39 +43,30 @@
         id: image_menu
         source: 'style/image/dark_menu.png'
 	
-	MDBoxLayout:
+	MDGridLayout:
+        cols:1
         
-        padding: 30,0
-        
+        size_hint: (1,.6)
         
             
         ScrollView:
+            pos_hint: {'center_x':.5,'center_y':.5}
             
-            pos_hint: {'center_x':.5,'center_y':.1}
-            
-            MDFloatLayout:
-                pos_hint: {'center_x': .5, 'center_y': .1}
-                
+            MDGridLayout:
+                cols: 1
                 adaptive_height: True
+                pos_hint: {'center_x':.5,'center_y':.5}
+                
+                id: fix
+                   
+                
                 
                     
                     
-                
-        
+            
                     
-                        
-                FitImage:
-                    pos_hint: {'center_x': .5, 'center_y': .01}
-                    id: custom
-                    source: ''
-                    size_hint: 1,5.5
-                    radius: ('17sp')
-            
-            
-            
                 
-                MDSliverAppbarContent:
-                    id: contect
+                
                     
                     
                     
@@ -63,7 +79,7 @@
             
             
         spacing: "40sp"
-        padding: "20sp"
+        padding: "80sp"
         
 			
 

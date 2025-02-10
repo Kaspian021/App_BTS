@@ -88,19 +88,21 @@
                     on_press: 
                         root.move_about_programmer()
                         app.root.transition.direction= "right"
-                        
             
             MDTopAppBarTitle:
-                text: 'BTS The Best'
-                halign: 'center'
-                font_name: 'style/perfect.ttf'
-                pos_hint_x: {'center_x': .5}
-                font_style: 'Title'
-                role: 'medium'
+                text: 'BTS IS BEST'
+                        
+            
+            MDFloatLayout:
+                pos_hint: {'center_x': .1 , 'center_y': .5}
+                FitImage:
+                    source: 'style/image/logo.png'
+                    size_hint: '.5sp','.4sp'
+                    pos_hint: {'center_x': .1, 'center_y': .5}
                 
                 
         MDButton:
-                
+            
             pos_hint: {'center_x':.85,'center_y':.92}
             on_release: root.change_color()
             MDButtonText:

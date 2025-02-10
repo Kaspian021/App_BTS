@@ -7,13 +7,9 @@ from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.uix.label import Label
 from kivymd.app import MDApp
-from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.button import MDIconButton
-from kivymd.uix.card import MDCard
 from kivymd.uix.fitimage import FitImage
-from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.gridlayout import MDGridLayout
-from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import MDScreenManager, MDScreen
 from kivymd.uix.hero import MDHeroFrom
 from kivy.metrics import dp
@@ -63,8 +59,8 @@ class HeroItem(MDHeroFrom):
             page_screen = screen_manager.get_screen('Page')
             if hasattr(page_screen.ids, 'hero_to'):
                 page_screen.ids.hero_to.tag = self.tag
+
             page_screen.load_page(self.tag)
-            page_screen.on_enter(self.tag)
             screen_manager.current = "Page"
 
         Clock.schedule_once(switch_screen, .2)
@@ -105,16 +101,16 @@ class Menu(MDScreen):
     def on_kv_post(self, base_widget):
         name= ['Kim namjoon','Kim seokjin','Min yoogi','Jung hoseok','Park jimin','Kim taehyung','Jeon jungkook']
         List_image= [
-            'style/image/Kim namjoon.jpg',
-            'style/image/Kim seokjin.jpg',
-            'style/image/Min yoogi.jpg',
-            'style/image/Jung hoseok.jpg',
-            'style/image/Park jimin.jpg',
-            'style/image/Kim taehyung.png',
-            'style/image/Jeon jungkook.jpg'
+            'style/image/RM/Kim namjoon.jpg',
+            'style/image/jin/Kim seokjin.jpg',
+            'style/image/suga/Min yoogi.jpg',
+            'style/image/J-Hope/Jung hoseok.jpg',
+            'style/image/jimin/Park jimin.jpg',
+            'style/image/V/Kim taehyung.png',
+            'style/image/jungkook/Jeon jungkook.jpg'
 
         ]
-        text_label= Label(text=get_display(arabic_reshaper.reshape('برای اخبار جدید(BTS)به پیج ما بپیوندید'))
+        text_label= Label(text=get_display(arabic_reshaper.reshape('برای اخبار جدید(BTS)به پیج های ما بپیوندید'))
                           ,pos_hint={'center_x':.5,'center_y':.9}
                           ,font_size= 12,
                           )
