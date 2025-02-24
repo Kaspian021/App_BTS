@@ -4,7 +4,6 @@ from kivy.resources import resource_add_path
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
-from kivy.uix.screenmanager import ScreenManager
 from kivymd.uix.screenmanager import MDScreenManager
 from module.app_about import About
 from module.name import Name

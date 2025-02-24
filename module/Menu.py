@@ -1,5 +1,6 @@
 import webbrowser
 
+import pygame.mixer
 from arabic_reshaper import arabic_reshaper
 from bidi.algorithm import get_display
 from kivy.properties import StringProperty, ObjectProperty
@@ -7,15 +8,17 @@ from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.uix.label import Label
 from kivymd.app import MDApp
+from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.button import MDIconButton
+from kivymd.uix.card import MDCard
 from kivymd.uix.fitimage import FitImage
+from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.gridlayout import MDGridLayout
+from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import MDScreenManager, MDScreen
 from kivymd.uix.hero import MDHeroFrom
 from kivy.metrics import dp
-
-
-
+from plyer import orientation
 
 
 
@@ -43,7 +46,7 @@ class HeroItem(MDHeroFrom):
         for instance, radius in {
             instance_hero_widget: [dp(24), dp(24), dp(24), dp(24)],
             instance_hero_widget._overlay_container: [0, 0, dp(24), dp(24)],
-            instance_hero_widget._image: [dp(24), dp(24), dp(24), dp(24)],
+            instance_hero_widget._image: [dp(14), dp(14), dp(14), dp(14)],
         }.items():
             Animation(
                 radius=radius,
@@ -61,6 +64,7 @@ class HeroItem(MDHeroFrom):
                 page_screen.ids.hero_to.tag = self.tag
 
             page_screen.load_page(self.tag)
+
             screen_manager.current = "Page"
 
         Clock.schedule_once(switch_screen, .2)
@@ -72,10 +76,17 @@ class IconImage(FitImage,MDIconButton):
 
 
 class Menu(MDScreen):
+    select_icon=StringProperty()
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
+        self.mb = None
+        self.card = None
+        self.music = None
+        self.is_play = None
+        self.icon_select = None
         self.layout_one = None
         self.layout = None
+        self.current_position= 0.0
 
     def change_color(self):
 
@@ -166,6 +177,67 @@ class Menu(MDScreen):
 
             self.parent.current = 'Pro'
 
+    def your_music_to_menu(self,music,image,title):
+
+        self.music=music
+        if self.music:
+            self.ids.card_music.clear_widgets()
+
+            self.card=MDCard(MDBoxLayout(
+                FitImage(
+                    source=image,
+                    size_hint=(.5,1),
+                    radius=[10],
+                ),
+                MDLabel(
+                    text=title,
+                    font_style='Title',
+                    role='small',
+                ),
+
+                MDIconButton(
+                    icon='stop',
+                    pos_hint= {'center_x': .7, 'center_y': .5},
+                    on_release=lambda x:self.stop_music(),
+
+            )))
+
+            self.mb=MDIconButton(
+                icon=self.select_icon,
+                pos_hint={'center_x': .7, 'center_y': .5},
+                on_press=lambda x: self.select(self.select_icon),
+
+            )
+
+            self.card.add_widget(self.mb)
+            self.ids.card_music.add_widget(self.card)
+
+
+
+    def select(self,select_icon):
+        from .Page import MusicPlayer
+        if select_icon== 'play':
+            self.mb.icon = 'pause'
+            MusicPlayer.play_menu_music(self)
+
+
+
+        else:
+            self.mb.icon = 'play'
+            MusicPlayer.resume(self)
+
+
+
+
+    def stop_music(self):
+        from .Page import MusicPlayer
+        MusicPlayer.stop(self)
+        self.ids.card_music.clear_widgets()
+        animation=Animation(opacity=0,duration=1.2)
+        animation.bind(on_complete=self.animation_completed)
+        animation.start(self)
+    def animation_completed(self,*args):
+        self.opacity=1
 
 
 class Programmer(MDScreen):

@@ -25,6 +25,7 @@
 
         MDSmartTileImage:
             id: image
+            
             source: root.source
             radius: dp(24)
 
@@ -57,6 +58,8 @@
     FitImage:
         id: image_menu
         source: 'style/image/dark_menu.png'
+    
+    
     
     
     
@@ -109,6 +112,12 @@
                 text: '{}'.format(app.theme_cls.theme_style)
                 font_style: 'Label'
                 role: 'medium'
+    
+    MDFloatLayout:
+        id: card_music
+        size_hint: (1,.12)
+        pos_hint: {'center_x':.5,'center_y': .9}
+        
     
     
                 
