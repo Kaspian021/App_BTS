@@ -1,0 +1,164 @@
+#:import arabic_reshaper arabic_reshaper
+#:import MDTextFieldPersian style.persian.MDTextFieldPersian
+#:import get_display bidi.algorithm.get_display
+
+<SongCard>
+    size_hint_y: None
+    height: "80dp"
+    padding: "10dp"
+    spacing: "10dp"
+    md_bg_color: app.theme_cls.backgroundColor
+    radius: [10]
+    
+    MDBoxLayout:
+        id: box
+        orientation: 'horizontal'
+        spacing: '10dp'
+        FitImage:
+            id: image_music
+            source: ''
+            size_hint: (.6,1.1)
+            radius: [10]
+        MDLabel:
+            id: text_music
+            text:
+            font_style: 'Title'
+            role: 'small'
+        
+        MDIconButton:
+            id: button_icon
+            icon: 'play'
+            pos_hint: {'center_x': .7, 'center_y': .5}
+            on_press: 
+                root.click_play()
+                root.music_menu()
+                
+            
+        
+        MDIconButton:
+            icon: 'stop'
+            pos_hint: {'center_x': .9, 'center_y': .5}
+            on_press: 
+                
+                root.click_stop()
+                
+            
+            
+    
+    
+<FixStyleScroll>
+    id: layout
+    adaptive_height: True
+    spacing: '5dp'
+    
+    cols: 1
+    
+        
+    MDGridLayout:
+        size_hint_y: None
+        height: "700dp"
+        padding: "10dp"
+        spacing: "10dp"
+        
+        cols:1
+        id: text_photo
+        
+        
+        
+            
+    
+    
+        
+        
+        
+            
+        
+    MDGridLayout:
+        
+        cols: 4
+        pos_hint: {'center_x': .5, 'center_y': .1}
+        spacing: 5
+        id: style
+        
+        
+        
+        
+    
+    
+    
+        
+            
+        
+        
+
+        
+    
+    
+        
+<Page>:
+    hero_to: hero_to
+    name: "Page"
+    
+    
+    FitImage:
+        id: image_menu
+        source: 'style/image/dark_menu.png'
+        
+    
+        
+        
+    ScrollView:
+        size_hint_y: 0.65 
+        
+        MDGridLayout:
+            
+            id: fix
+            cols: 1
+            adaptive_height: True
+            spacing: "20dp"
+            padding: "15dp"
+               
+            
+            
+                
+           
+            MDList:
+                id: song_list
+                spacing: "10dp"
+                
+                    
+                
+                
+                    
+                    
+                    
+				
+
+
+    
+    MDFloatLayout:
+		pos_hint: {'center_y': .5}
+            
+            
+        spacing: "40sp"
+        padding: "80sp"
+        
+			
+
+		MDHeroTo:
+			id: hero_to
+			radius: dp(24)
+			
+			size_hint: 1,None
+			height: "220sp"
+			pos_hint: {"top": 1}
+	
+		
+		MDIconButton:
+			pos_hint:{"top": 1}
+			icon: 'arrow-left'
+			on_release: 
+                root.manager.current = "Menu"
+        
+        
+            

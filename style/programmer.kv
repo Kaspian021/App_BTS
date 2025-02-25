@@ -1,0 +1,76 @@
+<Programmer>:
+	name: 'pro'
+	
+	md_bg_color: rgba(0,0,0,255)
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding:0,0
+      
+        FitImage:
+            source: 'style/image/BtsBg.jpeg'
+    
+    FitImage:
+        source: 'style/image/logo.png'
+        size_hint: '.2sp','.1sp'
+        pos_hint: {'center_x': .2 , 'center_y': .96}
+        
+    
+    MDCard:
+        id: Card
+        pos_hint: {'center_x': .5, 'center_y': .55}
+        size_hint: (.75, .6)
+        style: 'elevated'
+        
+        
+        
+            
+        FitImage:
+            source: 'style/image/textfield.png'
+            size_hint: 1,1
+            radius: ('17sp')
+        
+    MDFloatLayout:
+        size_hint: .45,.45
+        pos_hint: {'center_x': .5, 'center_y': .4}
+        
+        
+        IconImage:
+            id: instagram
+            source: 'style/image/instagram-icon.png'
+            pos_hint: {'center_x': .1, 'center_y': .3}
+            size_hint: .3,.15
+            radius: ('0sp')
+            on_release:
+                root.link_ins()
+            
+        IconImage:
+            id: telegram
+            source: 'style/image/telegram-logo.png'
+            pos_hint: {'center_x': .5, 'center_y': .3}
+            size_hint: .3,.15
+            radius: ('0sp')
+            on_release:
+                root.link_tel()
+            
+            
+            
+        IconImage:
+            id: youtube
+            source: 'style/image/youtube-logo.png'
+            pos_hint: {'center_x': .9, 'center_y': .3}
+            size_hint: .3,.15
+			radius: ('0sp')
+			on_release:
+                root.link_you()
+			
+    MDIconButton:
+        icon: 'arrow-right-bold-circle-outline'
+        theme_icon_color: "Custom"
+        icon_color: 'black'
+        style: 'tonal'
+        pos_hint: {"center_x": .9, 'center_y': .96}
+        on_release: 
+			app.root.current= 'Menu'
+			app.root.transition.direction= "left"
+        
