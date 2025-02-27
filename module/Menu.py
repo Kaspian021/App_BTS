@@ -15,7 +15,7 @@ from kivymd.uix.fitimage import FitImage
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.gridlayout import MDGridLayout
 from kivymd.uix.label import MDLabel
-from kivymd.uix.screen import MDScreenManager, MDScreen
+from kivymd.uix.screen import MDScreen
 from kivymd.uix.hero import MDHeroFrom
 from kivy.metrics import dp
 from plyer import orientation
@@ -110,7 +110,7 @@ class Menu(MDScreen):
 
 
     def on_kv_post(self, base_widget):
-        name= ['Kim namjoon','Kim seokjin','Min yoogi','Jung hoseok','Park jimin','Kim taehyung','Jeon jungkook']
+        name= ['Kim namjoon','Kim seokjin','Min Yoongi','Jung hoseok','Park jimin','Kim taehyung','Jeon jungkook']
         List_image= [
             'style/image/RM/Kim namjoon.jpg',
             'style/image/jin/Kim seokjin.jpg',

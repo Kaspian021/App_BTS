@@ -56,7 +56,7 @@ class FixStyleScroll(MDGridLayout):
                     'style/image/jin/children4.jpg',
                 ]
             },
-            'Min yoogi': {
+            'Min Yoongi': {
                 'text_photo': 'style/image/text3.png',
                 'person_id': 'https://www.instagram.com/rm.king.kimnamjoon',
                 'gallery': [
@@ -110,7 +110,7 @@ class FixStyleScroll(MDGridLayout):
 
         }
         self.ids.text_photo.clear_widgets()
-
+        self.ids.style.clear_widgets()
         if tag in sources:
             mb = MDFloatLayout(
 
@@ -325,7 +325,7 @@ class SongCard(MDCard):
 
 
         self.ids.image_music.source=self.photo_music
-        self.ids.text_music.text = f'{self.title}\n{self.duration}'
+        self.ids.text_music.text = f'{self.title}'
 
 
     def music_menu(self):
@@ -366,7 +366,7 @@ class SongCard(MDCard):
 
 
         else:
-            self.ids.text_music.text = f'{self.title}\n{self.duration}'
+            self.ids.text_music.text = f'{self.title}'
 
             self.ids.text_music.clear_widgets()
 
@@ -409,70 +409,70 @@ class Page(MDScreen):
         self.sound_data = {
             'Kim namjoon': [
                 {
-                    'photo': 'style/image/jimin/Park jimin.jpg',
+                    'photo': 'style/image/RM/RM_BTS_All_Day.jpg',
                     'title': 'All_Day',
                     'duration': '2:10',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/64ck5ziw1do60tcft6dy2/RM_BTS_All_Day.mp3?rlkey=oh0dw63zszteq9fcku3ln7ybl&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_Change_pt.2.jpg',
                     'title': 'Change_pt.2',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/t88bgz0p1jrh3s24mhpam/RM_BTS_Change_pt.2.mp3?rlkey=kftfn72fpvgeodza0gqel7n4g&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_Closer.jpg',
                     'title': 'Closer',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/u1ddttw8mcqhtdcrzubzm/RM_BTS_Closer.mp3?rlkey=r9pdafz9qqe1bkq2l5st0gcrj&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_Forgetfulness.jpg',
                     'title': 'Forgetfulness',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/5d6xxeq2yl5d772tr9wnq/RM_BTS_Forgetfulness.mp3?rlkey=57buulnu3n78prfedsfsrbmla&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_Hectic.jpg',
                     'title': 'Hectic',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/zyrqviczdmeaypdhiptg5/RM_BTS_Hectic.mp3?rlkey=chszbphm72yjine2rgapmv3kw&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_Lonely.jpg',
                     'title': 'Lonely',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/ce3sjer3swwwu1faug39j/RM_BTS_Lonely.mp3?rlkey=6mv7u6472zsdltgtt8g0bn7qt&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_No.2.jpg',
                     'title': 'No.2',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/5qp9juuctwkm7qtatb5sl/RM_BTS_No.2.mp3?rlkey=0bfiib2gczoaz1maz42640lzt&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_Still_Life.jpg',
                     'title': 'Still_Life',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/4s53rmbmettlshmb3zci6/RM_BTS_Still_Life.mp3?rlkey=5bq8fjt4zblwfp1xd9p42lcu7&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM_BTS_Wild_Flower.jpg',
                     'title': 'Wild_Flower',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/cc18s97rdpnwf8trx1wg0/RM_BTS_Wild_Flower.mp3?rlkey=lhsrlsuzxg5cz9wlrinidfpby&dl=0'
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
+                    'photo': 'style/image/RM/RM-BTS-yun.jpg',
                     'title': 'RM_BTS_Yun',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/i0u5yp8euv4773xd017ux/RM_BTS_Yun.mp3?rlkey=lcy0w8lwb3ifarthr5x8si6i2&dl=0'
@@ -481,8 +481,8 @@ class Page(MDScreen):
             ],
             'Kim seokjin': [
                 {
-                    'photo': 'style/image/jin/Epiphany[Musicbaran].jpg',
-                    'title': 'Epiphany[Musicbaran]',
+                    'photo': 'style/image/jin/Epiphany.jpg',
+                    'title': 'Epiphany',
                     'duration': '2:54',
                     'url': 'https://dl.dropboxusercontent.com/scl/fi/ptelccmry0ukwt9fbqfcq/Jin-BTS-Epiphany-Musicbaran.mp3?rlkey=aku20uwdtu4qdw668fnl3ekfw&dl=0'
 
@@ -503,14 +503,14 @@ class Page(MDScreen):
                 },
                 {
                     'photo': 'style/image/jin/Jin-Tonight.jpg',
-                    'title': 'BTS-Jin-Tonight',
+                    'title': 'Tonight',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
                     'photo': 'style/image/jin/BTS-Jin-Moon.jpg',
-                    'title': 'BTS-Jin-Moon',
+                    'title': 'Moon',
                     'duration': '2:54',
                     'url': ''
 
@@ -551,84 +551,78 @@ class Page(MDScreen):
 
                 },
             ],
-            'Min yoogi': [
+            'Min Yoongi': [
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/Agust D.jpg',
+                    'title': 'Agust D',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/BTS_suga_Daechwita.jpg',
+                    'title': 'Daechwita',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/BTS_suga_First Love.jpg',
+                    'title': 'First Love',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/BTS_suga_Haegeum.jpg',
+                    'title': 'Haegeum',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/BTS_suga_Halsey-Lilith.jpg',
+                    'title': 'Halsey-Lilith',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/BTS_suga_OMI You.jpg',
+                    'title': 'OMI You',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/BTS_suga_-Strange.jpg',
+                    'title': 'Strange',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/BTS_suga_That That.jpg',
+                    'title': 'That That',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/Over the Horizon.jpg',
+                    'title': 'Over the Horizon',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/suga/People Pt.2.jpg',
+                    'title': 'People Pt.2',
                     'duration': '2:54',
                     'url': ''
 
                 },
-                {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
-                    'duration': '2:54',
-                    'url': ''
 
-                },
             ],
             'Jung hoseok': [
                 {
@@ -869,82 +863,77 @@ class Page(MDScreen):
             ],
             'Jeon jungkook': [
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/At My Worst.jpg',
+                    'title': 'At My Worst',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/die with a smile.jpg',
+                    'title': 'die with a smile',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/Hate You.jpg',
+                    'title': 'Hate You',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/Jung Kook - Standing Next to You.jpg',
+                    'title': 'Standing Next to You',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/Jung Kook_Somebody.jpg',
+                    'title': 'Jung Kook_Somebody',
+                    'duration': '2:54',
+                    'url': ''
+
+                },
+
+                {
+                    'photo': 'style/image/jungkook/my time .jpg',
+                    'title': 'my time',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/please don t change.jpg',
+                    'title': 'please don t change',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/Euphoria.jpg',
+                    'title': 'Euphoria',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/seven.jpg',
+                    'title': 'seven',
                     'duration': '2:54',
                     'url': ''
 
                 },
                 {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
+                    'photo': 'style/image/jungkook/Still With You.jpg',
+                    'title': 'Still With You',
                     'duration': '2:54',
                     'url': ''
 
                 },
-                {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
-                    'duration': '2:54',
-                    'url': ''
 
-                },
-                {
-                    'photo': 'style/image/logo.png',
-                    'title': 'song 1',
-                    'duration': '2:54',
-                    'url': ''
-
-                },
             ],
 
         }
