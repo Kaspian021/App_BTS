@@ -7,6 +7,7 @@ from kivy.properties import StringProperty, ObjectProperty
 from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.uix.label import Label
+from kivymd.uix.button import MDButton,MDButtonText
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.button import MDIconButton
@@ -125,16 +126,18 @@ class Menu(MDScreen):
                           ,pos_hint={'center_x':.5,'center_y':.9}
                           ,font_size= 12,
                           )
-        icon_tel = MDIconButton(id='tel',
-                                icon='youtube',
-                                pos_hint={'center_x': .6, 'center_y': .1},
-                                on_release=lambda x:self.link_icon('tel'),
+        icon_tel = MDButton(
+                        MDButtonText(text='Telegram'),
+                        pos_hint={'center_x': .6, 'center_y': .1},
+                        on_release=lambda x:webbrowser.open('https://t.me/Bts_is_Best_team'),
+                        style='text'
+
                                 )
-        icon_ins= MDIconButton(id='ins',
-                               icon='instagram',
-                               pos_hint={'center_x':.4,'center_y':.1},
-                               on_release= lambda x:self.link_icon('ins'),
-                               )
+        icon_ins= MDIconButton(
+                        icon='instagram',
+                        pos_hint={'center_x':.4,'center_y':.1},
+                        on_release= lambda x:webbrowser.open('https://www.instagram.com/bts_is_best2025/'),
+            )
         self.layout_one = MDGridLayout(pos_hint={'center_x': .5, 'center_y': .1},
                                    cols=2,
                                    size_hint=(1, .1),
@@ -158,11 +161,6 @@ class Menu(MDScreen):
         self.ids.box.add_widget(self.layout_one)
         self.ids.box.add_widget(self.layout)
 
-    def link_icon(self,icon):
-        if icon == 'ins':
-            webbrowser.open('https://www.youtube.com/@MR_Wizard_Grop')
-        elif icon == 'tel':
-            webbrowser.open('https://t.me/bts_best_grop')
 
     def move_about_programmer(self):
         if self.parent:
@@ -242,9 +240,9 @@ class Menu(MDScreen):
 
 class Programmer(MDScreen):
     def link_ins(self):
-        pass
+        webbrowser.open('https://www.instagram.com/mr_wizard_2025?igsh=emxpMGI5cGtpM2Rv')
     def link_tel(self):
-        webbrowser.open('https://t.me/bts_best_grop')
+        webbrowser.open('https://t.me/wizard_programmer2025')
 
     def link_you(self):
         webbrowser.open('https://www.youtube.com/@MR_Wizard_Grop')
